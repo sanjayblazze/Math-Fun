@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<br/>
+<h1>Topics</h1>
+<hr/>
+<div class = 'container'>
+{% for i in topic.all %}
+<li>{{i.tname}}</li>
+    <a href = '{{i.files.url}}'>Test</a>
+{% endfor %}
+</div>
+{% endblock %}

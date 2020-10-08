@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load account %}
+{% block content %}
+
+<h1>this is the weightage page</h1><br>
+{% for i in wg.all %}
+<img src= '{{ i.image.url }}' height = 50% width = 50% />
+<br/>
+{{ i.weight }}
+<br/>
+<a href="{% url 'home-page' %}" class = 'btn btn-primary'>Back</a>
+{% endfor %}
+{% endblock %}
