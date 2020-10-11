@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
    ]
 
 MIDDLEWARE = [
@@ -134,9 +135,29 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID=1
+#EMAIL Backendsp
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sanjayblazze@gmail.com'
+EMAIL_HOST_PASSWORD = 'alwsdxyupnzbwphj'
+DEFAULT_FROM_EMAIL = 'TeamJarvis <noreply@MathsFun.com>'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = 'home-page'
 LOGOUT_REDIRECT_URL = 'home-page'
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'APP': {
+            'client_id': '605340389275-dhtd8jg99srh7rf5qifcq0hl7plagj63.apps.googleusercontent.com',
+            'secret': 'qRz4R9g6EcbTbKcu3w7Hhs60',
+
+        }
+    }
+}

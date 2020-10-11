@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class = 'container'>
-<br/>
-<br/>
-<ol>
+  <br/>
+  <ol>
     {% for x in ac %}
-    <div class="card">
-  <div class="card-body">
-    <h5 class="card-title"><a href="{% url 'topic' x.id %}" id = 'cd' style = 'text-decoration:none;color:black;' id = 'click'>{{x.standardname}}</a></h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-  </div>
-  <img src= "{{ x.clsimg.url }}" class="card-img-bottom" />
-
-</div>
+    <div class="card mb-4" style="max-width: 540px;">
+      <div class="row no-gutters">
+        {% if x.clsimg %}
+        <div class="col-md-4">
+          <img src="{{ x.clsimg.url }}"  class="card-img" height = '100%' width = '100%'>
+        </div>
+        {% endif %}
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><a href="{% url 'topic' x.id %}"  id = 'click'>{{x.standardname}}</a></h5>
+            <p class="card-text"><a href="{% url 'topic' x.id %}"  id = 'click'>{{x.deskrip}}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
     {% endfor %}
-</ol>
+  </ol>
 </div>
 {% endblock %}
