@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <br/>
-<h1><a id = "cw"> Login</a></h1>
+<h1>Login,Welcome back senpai!</h1>
 <hr/>
 <form method="POST">
- <a id = "cw">  {% csrf_token %}
-   {{form.as_p}}</a>
+   {% csrf_token %}
+   {{form.as_p}}
   <a href="{% url 'account_reset_password' %}" id="click">Forget password</a>
   <br/>
   <button class = 'btn btn-success'>Login</button>

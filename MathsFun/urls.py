@@ -6,5 +6,5 @@ urlpatterns = [
     path('Weightage/Standard', views.weightage, name='weightage'),
     path('About/Standard', views.About, name='about'),
     path('search/', views.search, name='search'),
-    path('newsletter/<int:uid>',views.success,name = 'success'),
+    path('newsletter/<int:uid>', views.success, name='success'),
    ]

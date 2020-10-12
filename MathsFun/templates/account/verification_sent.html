@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<br/>
+<h1><a id = "cw"> verificstion</a></h1>
+<hr/>
+<form method="POST">
+ <a id = "cw">
+   {% csrf_token %}
+   {{form.as_p}}</a>
+    <h4><a id = "cw">we have sent a verifition emali check ur mail senpai</a></h4>
+    <a href="{% url 'home-page' %}" class = 'btn btn-success'>Back</a>
+</form>
+{% endblock %}

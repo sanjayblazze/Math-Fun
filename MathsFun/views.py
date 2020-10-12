@@ -33,17 +33,17 @@ def search(request):
         return render(request, 'MathsFun/search.html', {'post':post})
 
 def success(request, uid):
-    template = render_to_string('Mathsfun/newsletter.html',{'name': request.user.email})
-    email= EmailMessage(
-        "shit shit doom",
-        template,
-        settings.EMAIL_HOST_USER,
-        [request.user.email],
+    template = render_to_string('Mathsfun/newsletter.html', {'name': request.user.email})
+    email = EmailMessage(
+      "Hi Senpai,from team jarvis",
+      template,
+      settings.EMAIL_HOST_USER,
+      [request.user.email],
     )
-    email.fail_silently=False
+
+    email.fail_silently = False
     email.send()
 
-    project = AllStandard.objects.get(id = uid)
-    context = {'project': project}
+    project = AllStandard.objects.get(id=uid)
 
-    return render(request, 'MathsFun/news.html', context)
+    return render(request, 'MathsFun/news.html', {'project':project})

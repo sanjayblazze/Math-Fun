@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load socialaccount %}
-<br/>
-<a href='{% provider_login_url  "google" %}'>Google</a>
-<h1>Create New Account</h1>
+
+<h1>Create New Account, Senpai!</h1>
 <hr/>
 <form method="POST">
   {% csrf_token %}
-  {{form.as_p}}
-
+   {{form.as_p}}
+  <h5>(or) use google</h5>
+  <button class = 'btn btn-success'><a href='{% provider_login_url "google" %}'>google</a></button>
+  <br/>
+  <h7>*note* Senpai, if you use google to signup after signup you need to set password.</h7>
+  <br/>
+  <br/>
   <button class = 'btn btn-success'>Register</button>
 
 </form>

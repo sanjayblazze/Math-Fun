@@ -22,36 +22,35 @@
   color:black;
 }
 #click:hover {
-  color:Aquamarine !important;
+  color:Crimson !important;
 }
 #cp{
   text-decoration:none;
   color:black;
 }
 #cp:hover {
-  color:RoyalBlue !important;
-}
-#cd:hover {
-  color:Aquamarine !important;
+  color:Crimson !important;
 }
 #cz{
   text-decoration: none !important;
-}
-#cz:hover {
   color:Crimson !important;
 }
+#cz:hover {
+  color:DeepPink !important;
+}
+
 body{
   font-family: 'Bangers', cursive !important;
-  background-image: url("{% static 'background.jpg' %}");
-  background-size: auto !important;
+  background-image: url("{% static 'lb.jpg' %}");
+  background-size: 100%
   background-repeat: no-repeat;
 }
 </style>
 <body>
-  <nav class="navbar navbar-light" >
+  <nav class="navbar navbar-light " style="background-color:#7fffd4;" >
     <!-- Navbar content -->
 
-    <div class = 'container' style="background-color:#7fffd4;">
+    <div class = 'container' >
       <nav class="navbar navbar-expand-lg navbar-light" >
         <a class="navbar-brand" href='{% url "home-page" %}' id = 'cp'>
           <img src ='{% static "wlogo.png" %}' class='d-inline-block align-top-right' height=60 width=60/>
@@ -67,10 +66,7 @@ body{
           <div class = 'nav-item'>
             <a class = 'nav-link' href = "{% url 'weightage' %}" id = 'cp'>Weightage</a>
           </div>
-          <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-1" type="text" placeholder="Search" name="search"/>
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-          </form>
+
           <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
             <li class="nav-item">
@@ -84,11 +80,26 @@ body{
               <a class="nav-link" href="{% url 'account_signup' %}" id = 'cp'>SignIn</a>
             </li>
             {% endif %}
-            <a class = 'nav-link' href = '{% url "account_change_password" %}'>Reset Password</a>
-            {% if user.is_authenticated %}
-            <a href = '{% url "success" request.user.id%}'>newsletter</a>
-            {% endif %}
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id = 'cp'>
+                 settings
+               </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% if user.is_authenticated %}
+                <a class = 'nav-link' href = '{% url "success" request.user.id %}' id = 'cp'>newsletter</a>
+              {% endif %}
+              <a class = 'nav-link' href = '{% url "account_change_password" %}' id = 'cp'>change Password</a>
+              <a class = 'nav-link' href = '{% url "account_email" %}' id = 'cp'>email info</a>
+              {% if user.is_authenticated%}
+                <a class = 'nav-link' href = '{% url "account_set_password" %}' id = 'cp'>set password</a>
+              {% endif  %}
+            </div>
+            </li>
           </ul>
+          <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-1" type="text" placeholder="Search" name="search"/>
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
       </nav>
     </div>
@@ -99,7 +110,7 @@ body{
   </div>
   <div>
     <footer class = 'text-muted'>
-      <div class = 'container text-center'>
+      <div class = 'container text-right'>
         <a href = "{% url 'home-page' %}" class = 'text-muted' id = 'cz'>© Team Jarvis {% now 'Y' %}</a>
       </div>
     </footer>
