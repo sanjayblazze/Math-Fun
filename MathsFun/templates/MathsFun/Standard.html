@@ -3,6 +3,9 @@
 <div class = 'container'>
   <br/>
   <ol>
+    {% if user.is_authenticated %}
+    <h3> Welcome , {{user.username}} Senpai ! </h3>
+    {% endif %}
     {% for x in ac %}
     <div class="card mb-4" style="max-width: 540px;">
       <div class="row no-gutters">

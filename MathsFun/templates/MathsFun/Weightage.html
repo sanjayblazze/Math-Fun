@@ -2,11 +2,10 @@
 {% load account %}
 {% block content %}
 <br/>
-<h1>this is the weightage page</h1>
+<h1>Weightage.</h1>
 {% for i in wg.all %}
 <br/>
-{{ i.weight }}
-<br/>
+<h3>{{ i.weight }}</h3>
 <h6><img src= '{{ i.image.url }}' height = 50% width = 50% /></h6>
 <br/>
 {% endfor %}

@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
+from django.contrib.auth.models import User
 
 def Standard(request):
     ac = AllStandard.objects.all()
@@ -44,6 +45,6 @@ def success(request, uid):
     email.fail_silently = False
     email.send()
 
-    project = AllStandard.objects.get(id=uid)
+    project = User.objects.get(id=uid)
 
     return render(request, 'MathsFun/news.html', {'project':project})

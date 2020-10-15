@@ -8,9 +8,9 @@
   {% csrf_token %}
    {{form.as_p}}
   <h5>(or) use google</h5>
-  <button class = 'btn btn-success'><a href='{% provider_login_url "google" %}'>google</a></button>
+  <a class = 'btn btn-success' href='{% provider_login_url "google" %}'>google</a>
   <br/>
-  <h7>*note* Senpai, if you use google to signup after signup you need to set password.</h7>
+  <h7>*note* Senpai, if you use google to signup after signup you need to set password by going to change password.</h7>
   <br/>
   <br/>
   <button class = 'btn btn-success'>Register</button>

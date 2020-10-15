@@ -14,7 +14,7 @@
   <link rel="icon" href="{% static 'wlogo.png' %}" sizes="32x32" type="image/png">
   <link rel="icon" href="{% static 'wlogo.png' %}" sizes="16x16" type="image/png">
   <link rel="mask-icon" href="{% static 'wlogo.png' %}" color="#7fff00">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <style>
 #click {
@@ -22,26 +22,26 @@
   color:black;
 }
 #click:hover {
-  color:Crimson !important;
+  color:LightGreen !important;
 }
 #cp{
   text-decoration:none;
   color:black;
 }
 #cp:hover {
-  color:Crimson !important;
+  color:dodgerBlue !important;
 }
 #cz{
   text-decoration: none !important;
-  color:Crimson !important;
+  color:SpringGreen !important;
 }
 #cz:hover {
-  color:DeepPink !important;
+  color:Crimson !important;
 }
 
 body{
-  font-family: 'Bangers', cursive !important;
-  background-image: url("{% static 'lb.jpg' %}");
+  font-family: 'Anton', sans-serif; !important;
+  background-image: url("{% static 'background.jpg' %}");
   background-size: 100%
   background-repeat: no-repeat;
 }
@@ -80,25 +80,23 @@ body{
               <a class="nav-link" href="{% url 'account_signup' %}" id = 'cp'>SignIn</a>
             </li>
             {% endif %}
+            {% if user.is_authenticated %}
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id = 'cp'>
-                 settings
+                 Settings
                </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% if user.is_authenticated %}
-                <a class = 'nav-link' href = '{% url "success" request.user.id %}' id = 'cp'>newsletter</a>
-              {% endif %}
+
+              <a class = 'nav-link' href = '{% url "success" request.user.id %}' id = 'cp'>newsletter</a>
               <a class = 'nav-link' href = '{% url "account_change_password" %}' id = 'cp'>change Password</a>
               <a class = 'nav-link' href = '{% url "account_email" %}' id = 'cp'>email info</a>
-              {% if user.is_authenticated%}
-                <a class = 'nav-link' href = '{% url "account_set_password" %}' id = 'cp'>set password</a>
-              {% endif  %}
+              {% endif %}
             </div>
             </li>
           </ul>
-          <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0">
+          <!-- <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-1" type="text" placeholder="Search" name="search"/>
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button> -->
           </form>
         </div>
       </nav>
