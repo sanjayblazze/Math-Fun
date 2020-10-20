@@ -133,7 +133,6 @@ AUTHENTICATION_BACKENDS = [
 'django.contrib.auth.backends.ModelBackend',
 'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
 SITE_ID=1
 #EMAIL Backendsp
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -141,10 +140,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'sanjayblazze@gmail.com'
-EMAIL_HOST_PASSWORD = 'alwsdxyupnzbwphj'
+EMAIL_HOST_PASSWORD = 'rdsttyivikmtokrr'
 DEFAULT_FROM_EMAIL = 'TeamJarvis <noreply@MathsFun.com>'
-
-
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = 'home-page'
 LOGOUT_REDIRECT_URL = 'home-page'
