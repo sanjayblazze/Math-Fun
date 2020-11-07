@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load socialaccount %}
-
+{% load crispy_forms_tags %}
 <h1>Create New Account, Senpai!</h1>
 <hr/>
 <form method="POST">
   {% csrf_token %}
-   {{form.as_p}}
+   {{form|crispy}}
   <h5>(or) use google</h5>
   <a class = 'btn btn-success' href='{% provider_login_url "google" %}'>google</a>
   <br/>
-  <h7>*note* Senpai, if you use google to signup after signup you need to set password by going to change password.</h7>
+  <h7>*note* Senpai, if you use google to signup after signup you need to set password by going to "change password" in settings.
+  Also if you didn't add your username your email's firstname will be taken as username.</h7>
   <br/>
   <br/>
   <button class = 'btn btn-success'>Register</button>
