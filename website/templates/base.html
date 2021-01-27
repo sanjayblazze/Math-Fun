@@ -26,17 +26,24 @@
 }
 #cp{
   text-decoration:none;
-  color:black;
+  color:black !important;
 }
 #cp:hover {
   color:dodgerBlue !important;
 }
 #cz{
   text-decoration: none !important;
-  color:SpringGreen !important;
+  color:BlueViolet !important;
 }
 #cz:hover {
   color:Crimson !important;
+}
+#navbarDropdown{
+    color: black;
+
+}
+#navbarDropdown:hover {
+    color:dodgerBlue !important;
 }
 
 body{
@@ -45,10 +52,11 @@ body{
   background-size: 100%
   background-repeat: no-repeat;
 }
+
 </style>
 <body>
+
   <nav class="navbar navbar-light " style="background-color:#7fffd4;" >
-    <!-- Navbar content -->
 
     <div class = 'container' >
       <nav class="navbar navbar-expand-lg navbar-light" >
@@ -70,19 +78,20 @@ body{
           <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_logout' %}" id = 'cp'>Logout</a>
+              <a class="nav-link" href="{% url 'account_logout' %}" id = 'cp'>Signout</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_login' %}" id = 'cp'>Login</a>
+              <a class="nav-link" href="{% url 'account_login' %}" id = 'cp'>Signin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_signup' %}" id = 'cp'>SignIn</a>
+              <a class="nav-link" href="{% url 'account_signup' %}" id = 'cp'>Signup</a>
             </li>
+
             {% endif %}
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id = 'cp'>
+               <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id = 'cp'>
                  Settings
                </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -94,10 +103,7 @@ body{
             </div>
             </li>
           </ul>
-          <!-- <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-1" type="text" placeholder="Search" name="search"/>
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button> -->
-          </form>
+
         </div>
       </nav>
     </div>

@@ -1,4 +1,5 @@
 from django.db import models
+from embed_video.fields import EmbedVideoField
 
 class AllStandard(models.Model):
     clsimg = models.ImageField(upload_to='classimg/', blank=True)
@@ -12,6 +13,8 @@ class Topic(models.Model):
     Topicname = models.ForeignKey(AllStandard, on_delete=models.CASCADE)
     tname = models.CharField(max_length=300)
     files = models.FileField(upload_to='pdfs/')
+    video = EmbedVideoField(blank=True)
+
     def __str__(self):
         return self.tname
 

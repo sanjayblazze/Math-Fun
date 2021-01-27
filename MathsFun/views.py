@@ -8,6 +8,7 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 
+
 def Standard(request):
     ac = AllStandard.objects.all()
     template = loader.get_template('MathsFun/Standard.html')
@@ -27,18 +28,14 @@ def weightage(request):
 def About(request):
     return render(request,'MathsFun/About.html')
 
-def search(request):
 
-        srch='class 9'
-        post = AllStandard.objects.all().filter(standardname=srch)
-        return render(request, 'MathsFun/search.html', {'post':post})
 
 def success(request, uid):
     template = render_to_string('Mathsfun/newsletter.html', {'name': request.user.email})
     email = EmailMessage(
       "Hi Senpai,from team jarvis",
       template,
-      settings.EMAIL_HOST_USER,
+      settings.DEFAULT_FROM_EMAIL,
       [request.user.email],
     )
 
@@ -48,3 +45,6 @@ def success(request, uid):
     project = User.objects.get(id=uid)
 
     return render(request, 'MathsFun/news.html', {'project':project})
+def topicselector(request,pk):
+    topic = Topic.objects.filter(id=pk)
+    return render(request,'MathsFun/topicselector.html',{'data':topic})

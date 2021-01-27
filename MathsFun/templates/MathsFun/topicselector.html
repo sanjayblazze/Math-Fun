@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load embed_video_tags %}
+<div class  = 'container'>
+{% for i in data.all %}
+    <h1>{{i.tname}}</h1>
+    <br/>
+    <div class = 'container text-center'>{% video i.video %}</div>
+    <br/>
+     <a href = '{{i.files.url}}' class = 'btn btn-primary'>View PDF</a>
+    <br/>
+    <br/>
+     <a href="{% url 'home-page' %}" class = 'btn btn-success'>Back</a>
+{% endfor %}
+</div>
+{% endblock %}
