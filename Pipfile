@@ -10,6 +10,7 @@ django = "*"
 django-crispy-forms = "*"
 django-embed-video = "*"
 django-allauth = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.9"

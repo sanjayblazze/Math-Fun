@@ -7,4 +7,7 @@ In "Topics" we used 'Topicname' to store the class in which this lesson belong t
 we even used google authentication and the signin signup process are all are done with "allauth".    
 
 we reduced our lesson number and class number due to lack of storage, forgive us.
-      
+#Virtual Environment
+pipenv shell - To activate
+pipenv sync - To install from pipfile
+pipenv install -r requrements.txt - To install from text file
