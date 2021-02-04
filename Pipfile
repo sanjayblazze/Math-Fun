@@ -9,8 +9,8 @@ verify_ssl = true
 django = "*"
 django-crispy-forms = "*"
 django-embed-video = "*"
-django-allauth = "*"
 pillow = "*"
+django-allauth = "==0.43.0"
 
 [requires]
 python_version = "3.9"

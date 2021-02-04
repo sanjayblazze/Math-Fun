@@ -11,3 +11,7 @@ we reduced our lesson number and class number due to lack of storage, forgive us
 pipenv shell - To activate
 pipenv sync - To install from pipfile
 pipenv install -r requrements.txt - To install from text file
+#git
+git add .
+git commit -m '#message'
+git push -u origin main
