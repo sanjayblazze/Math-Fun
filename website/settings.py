@@ -154,6 +154,7 @@ SOCIALACCOUNT_STORE_TOKENS = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "optional"
+ACCOUNT_SESSION_REMEMBER = False
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
